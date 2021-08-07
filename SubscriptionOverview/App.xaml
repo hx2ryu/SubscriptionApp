@@ -1,0 +1,13 @@
+﻿<Application x:Class="SubscriptionOverview.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SubscriptionOverview"
+             StartupUri="MainWindow.xaml">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="BorderColor" Color="#E9EBED"/>
+            <SolidColorBrush x:Key="Foregrouhnd" Color="#9A9DA7"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

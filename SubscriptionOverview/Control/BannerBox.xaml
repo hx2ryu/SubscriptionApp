@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="SubscriptionOverview.Control.BannerBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:global="clr-namespace:SubscriptionOverview.Global"
+             xmlns:local="clr-namespace:SubscriptionOverview.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="300"
+             x:Name="RootControl">
+
+    <Border BorderBrush="{StaticResource BorderColor}"
+            Background="#FFFFFF"
+            BorderThickness="1"
+            CornerRadius="4">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0"
+                   Source="{Binding ElementName=RootControl, Path=Content.Source}"
+                   />
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0"
+                           VerticalAlignment="Bottom"
+                           Text="{Binding ElementName=RootControl, Path=Content.Title}"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           FontFamily="Roboto Medium"
+                           />
+
+                <TextBlock Grid.Row="2"
+                           VerticalAlignment="Top"
+                           Text="{Binding ElementName=RootControl, Path=Content.SubTitle}"
+                           FontSize="12"
+                           FontFamily="Roboto"
+                           />
+            </Grid>
+
+            <Grid Grid.Column="2" x:Name="NaviGrid" Margin="0 0 5 0">
+                <local:NavigatorButton RenderTransformOrigin="0.5, 0.5"
+                                       Height="{Binding ElementName=NaviGrid, Path=ActualWidth}"
+                                       Icon="{x:Static global:IconType.ChevronLeft}">
+                    <local:NavigatorButton.RenderTransform>
+                        <RotateTransform Angle="90"/>
+                    </local:NavigatorButton.RenderTransform>
+                </local:NavigatorButton>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

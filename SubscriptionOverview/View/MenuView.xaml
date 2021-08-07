@@ -1,0 +1,184 @@
+﻿<UserControl x:Class="SubscriptionOverview.View.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:global="clr-namespace:SubscriptionOverview.Global"
+             xmlns:ctrl="clr-namespace:SubscriptionOverview.Control"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:SubscriptionOverview.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/RadioButtonResourceDictionary.xaml"/>
+                <ResourceDictionary Source="../Resources/ButtonResourceDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top">
+                    <Button Style="{StaticResource CircleStyle}"
+                            Content="{x:Static global:IconType.Close}"
+                            Background="Red"
+                            Width="10" Height="10"
+                            Click="OnClickWindowStateButton"
+                            Tag="{x:Static global:WindowStateTag.Close}"
+                            />
+
+                    <Button Style="{StaticResource CircleStyle}"
+                            Content="{x:Static global:IconType.Minimize}"
+                            Background="Orange"
+                            Margin="5 0"
+                            Width="10" Height="10"
+                            Click="OnClickWindowStateButton"
+                            Tag="{x:Static global:WindowStateTag.Minimize}"
+                            />
+
+                    <Button Style="{StaticResource CircleStyle}"
+                            Content="{x:Static global:IconType.Maximize}"
+                            Background="Green"
+                            Width="10" Height="10"
+                            Click="OnClickWindowStateButton"
+                            Tag="{x:Static global:WindowStateTag.Maximize}"
+                            />
+                </StackPanel>
+
+                <ctrl:NavigatorButton Grid.Column="1"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"
+                                      Width="50" Height="20"
+                                      Icon="{x:Static global:IconType.Left}"
+                                      Margin="0 2 10 0"
+                                      Background="#FFFFFF"
+                                      BorderBrush="#E9EBED"
+                                      />
+            </Grid>
+
+            <ctrl:BannerBox Grid.Row="1"
+                            Margin="10"
+                            />
+        </Grid>
+
+        <Grid Grid.Row="0" Background="{StaticResource BorderColor}" Height="2" VerticalAlignment="Bottom"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="{StaticResource BorderColor}" Width="2" HorizontalAlignment="Right"/>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                </Grid.RowDefinitions>
+
+                <RadioButton Grid.Row="1"
+                                 Style="{StaticResource IconMenuStyle}" 
+                                 Content="{x:Static global:IconType.Search}"
+                                 Margin="0 0 0 10" 
+                                 />
+
+                <RadioButton Grid.Row="2"
+                                 Style="{StaticResource IconMenuStyle}"
+                                 Content="{x:Static global:IconType.Account}"
+                                 />
+
+                <RadioButton Grid.Row="3"
+                                 Style="{StaticResource IconMenuStyle}"
+                                 Content="{x:Static global:IconType.Check}"
+                                 />
+
+                <RadioButton Grid.Row="4"
+                             Style="{StaticResource IconMenuStyle}"
+                             Content="{x:Static global:IconType.Message}"
+                             />
+
+                <RadioButton Grid.Row="5"
+                             Style="{StaticResource IconMenuStyle}"
+                             Content="{x:Static global:IconType.List}"
+                             />
+
+                <RadioButton Grid.Row="6"
+                             Style="{StaticResource IconMenuStyle}"
+                             Content="{x:Static global:IconType.Setting}"
+                             Margin="0 10 0 0"
+                             />
+
+                <Button Grid.Row="8"
+                        Style="{StaticResource AllCornerIconStyle}"
+                        Content="{x:Static global:IconType.Bell}"
+                        Width="40" Height="40"
+                        HorizontalAlignment="Center"
+                        BorderThickness="0"
+                        Background="Transparent"
+                        />
+
+                <RadioButton Grid.Row="9"
+                             Style="{StaticResource IconMenuStyle}"
+                             Content="{x:Static global:IconType.Bell}"
+                             />
+            </Grid>
+
+            <StackPanel Grid.Column="1"
+                        x:Name="SubMenuContainer"
+                        Orientation="Vertical"
+                        Margin="10 20"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+
+                <RadioButton GroupName="List"
+                             Style="{StaticResource TextMenuStyle}"
+                             Content="Analytics"
+                             Width="{Binding ElementName=SubMenuContainer, Path=ActualWidth}"
+                             Margin="0 0 0 10"
+                             />
+
+                <RadioButton GroupName="List"
+                             Style="{StaticResource TextMenuStyle}"
+                             Content="Analytics"
+                             Width="{Binding ElementName=SubMenuContainer, Path=ActualWidth}"
+                             Margin="0 0 0 10"
+                             />
+
+                <RadioButton GroupName="List"
+                             Style="{StaticResource TextMenuStyle}"
+                             Content="Analytics"
+                             Width="{Binding ElementName=SubMenuContainer, Path=ActualWidth}"
+                             Margin="0 0 0 10"
+                             />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="SubscriptionOverview.Control.NavigatorButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="100"
+             x:Name="RootControl">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Resources/ButtonResourceDictionary.xaml"/>
+    </UserControl.Resources>
+        
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0"
+                Style="{StaticResource OneWayCornerIconStyle}"
+                Content="{Binding ElementName=RootControl, Path=Icon}"
+                BorderBrush="{Binding ElementName=RootControl, Path=BorderBrush}"
+                Background="{Binding ElementName=RootControl, Path=Background}"
+                BorderThickness="1 1 0.5 1"
+                />
+
+        <Button Grid.Column="1"
+                Style="{StaticResource OneWayCornerIconStyle}"
+                Content="{Binding ElementName=RootControl, Path=Icon}"
+                BorderBrush="{Binding ElementName=RootControl, Path=BorderBrush}"
+                Background="{Binding ElementName=RootControl, Path=Background}"
+                BorderThickness="1 1 0.5 1"
+                RenderTransformOrigin="0.5, 0.5">
+            
+            <Button.RenderTransform>
+                <RotateTransform Angle="180"/>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</UserControl>

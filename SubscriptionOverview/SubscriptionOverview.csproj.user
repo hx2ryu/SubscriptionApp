@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Control\BannerBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\BusinessPlanCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\InvoiceCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\NavigatorButton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\PaymentCard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\MenuView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SubscriptionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Control\BannerBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\BusinessPlanCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\InvoiceCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\NavigatorButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\PaymentCard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\ButtonResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\RadioButtonResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\MenuView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SubscriptionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
