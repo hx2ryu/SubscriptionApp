@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SubscriptionOverview.View
+namespace SubscriptionOverview.View.Subscription
 {
     /// <summary>
-    /// Interaction logic for SubscriptionView.xaml
+    /// Interaction logic for PaymentDetailsView.xaml
     /// </summary>
-    public partial class SubscriptionView : UserControl, IPageView
+    public partial class PaymentDetailsView : UserControl
     {
-        public SubscriptionView()
+        public PaymentDetailsView()
         {
             InitializeComponent();
         }

@@ -7,7 +7,7 @@
         xmlns:view="clr-namespace:SubscriptionOverview.View"
         mc:Ignorable="d"
         Title="MainWindow"
-        Height="720" Width="1280"
+        Height="768" Width="1150"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -22,11 +22,13 @@
             </Grid.ColumnDefinitions>
 
             <Border Background="#F8F8F8" BorderBrush="#F8F8F8" CornerRadius="3 0 0 3" BorderThickness="5 5 0 5">
-                <view:MenuView WindowStateChanged="OnReceiveWindowStateToBeChanged"/>
+                <view:MenuView WindowStateChanged="OnReceiveWindowStateToBeChanged"
+                               PageChangeRequested="OnReceivePageToBeChanged"
+                               />
             </Border>
 
             <Border Grid.Column="1" Background="#FFFFFF" BorderBrush="#F8F8F8" CornerRadius="0 3 3 0" BorderThickness="0 5 5 5">
-                <view:SubscriptionView />
+                <Grid x:Name="PageContainer"/>
             </Border>
         </Grid>
     </Border>

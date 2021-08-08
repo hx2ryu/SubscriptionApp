@@ -5,9 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:global="clr-namespace:SubscriptionOverview.Global"
              xmlns:local="clr-namespace:SubscriptionOverview.Control"
+             xmlns:cvt="clr-namespace:SubscriptionOverview.Converter"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="300"
              x:Name="RootControl">
+
+    <UserControl.Resources>
+        <cvt:ImageBrushConverter x:Key="ImageConverter"/>
+    </UserControl.Resources>
 
     <Border BorderBrush="{StaticResource BorderColor}"
             Background="#FFFFFF"
@@ -22,9 +27,10 @@
 
             <Image Grid.Column="0"
                    Source="{Binding ElementName=RootControl, Path=Content.Source}"
+                   Margin="5"
                    />
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Margin="5 0 0 0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.2*"/>
                     <RowDefinition Height="*"/>
@@ -33,7 +39,7 @@
                 <TextBlock Grid.Row="0"
                            VerticalAlignment="Bottom"
                            Text="{Binding ElementName=RootControl, Path=Content.Title}"
-                           FontSize="15"
+                           FontSize="13"
                            FontWeight="SemiBold"
                            FontFamily="Roboto Medium"
                            />
@@ -41,7 +47,7 @@
                 <TextBlock Grid.Row="2"
                            VerticalAlignment="Top"
                            Text="{Binding ElementName=RootControl, Path=Content.SubTitle}"
-                           FontSize="12"
+                           FontSize="11"
                            FontFamily="Roboto"
                            />
             </Grid>

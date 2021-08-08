@@ -37,4 +37,24 @@ namespace SubscriptionOverview.Global
         Maximize,
         Close,
     }
+
+    public enum PageType
+    {
+        Analytics,
+        CompanyBenefits,
+        Surveys,
+        TimeTracking,
+        Onboarding,
+        Subscription,
+    }
+
+    public enum SubscriptionSubPage
+    {
+        Overview,
+        Plans,
+        UserOverview,
+        Invoices,
+        PaymentDetails,
+        BillingAddress,
+    }
 }

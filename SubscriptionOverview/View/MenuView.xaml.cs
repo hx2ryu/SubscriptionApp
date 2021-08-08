@@ -1,18 +1,8 @@
-﻿using SubscriptionOverview.Global;
+﻿using SubscriptionOverview.Control.Model;
+using SubscriptionOverview.Global;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SubscriptionOverview.View
 {
@@ -22,10 +12,15 @@ namespace SubscriptionOverview.View
     public partial class MenuView : UserControl
     {
         public event EventHandler WindowStateChanged;
+        public event EventHandler PageChangeRequested;
+
+        private int currentPageIndex;
+        private readonly int lastPageIndex;
 
         public MenuView()
         {
             InitializeComponent();
+            lastPageIndex = SubMenuContainer.Children.Count - 1;
         }
 
         private void OnClickWindowStateButton(object sender, RoutedEventArgs e)
@@ -34,22 +29,63 @@ namespace SubscriptionOverview.View
             {
                 if (clickedButton.Tag is WindowStateTag tag)
                 {
-                    switch (tag)
-                    {
-                        case WindowStateTag.Minimize:
-                            break;
-                        
-                        case WindowStateTag.Maximize:
-                            break;
-                        
-                        case WindowStateTag.Close:
-                            break;
-
-                        default:
-                            return;
-                    }
-
                     WindowStateChanged?.Invoke(this, new WindowStateChangedEventArgs(tag));
+                }
+            }
+        }
+
+        private void OnSelectMenuButton(object sender, RoutedEventArgs e)
+        {
+            if (sender is RadioButton selectedButton)
+            {
+                currentPageIndex = SubMenuContainer.Children.IndexOf(selectedButton);
+
+                if (selectedButton.Tag is PageType type)
+                {
+                    PageChangeRequested?.Invoke(this, new PageChangeRequestedEventArgs(type));
+                }
+            }
+        }
+
+        private void OnReceiveNavigationTag(object sender, EventArgs e)
+        {
+            if (e is NavigationButtonClickedEventArgs args)
+            {
+                switch (args.Direction)
+                {
+                    case NavigationDirection.Left:
+                        if (currentPageIndex > 0)
+                        {
+                            ChangePage(--currentPageIndex);
+                        }
+                        break;
+                    
+                    case NavigationDirection.Rgiht:
+                        if (currentPageIndex < lastPageIndex)
+                        {
+                            ChangePage(++currentPageIndex);
+                        }
+                        break;
+                 
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void ChangePage(int pageIndexToBeChanged)
+        {
+            UIElementCollection menuButtonCollection = SubMenuContainer.Children;
+
+            for (int i = 0; i <= lastPageIndex; i++)
+            {
+                if (menuButtonCollection[i] is RadioButton btn)
+                {
+                    if (i == pageIndexToBeChanged)
+                    {
+                        btn.IsChecked = true;
+                        break;
+                    }
                 }
             }
         }

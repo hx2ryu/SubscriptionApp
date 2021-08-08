@@ -24,7 +24,7 @@
     </UserControl.Resources>
 
     <Border Background="#FFFFFF" BorderBrush="{StaticResource BorderColor}" CornerRadius="4" BorderThickness="2">
-        <Grid Margin="15">
+        <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Top" Margin="0 5 0 0">
                 <Border Background="#132239" BorderBrush="#132239" CornerRadius="4" BorderThickness="1">
                     <TextBlock Text="BUSINESS"
                                VerticalAlignment="Center"
@@ -51,11 +51,14 @@
                            />
             </StackPanel>
 
-            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <TextBlock Text="$"
                            FontSize="20"
                            Foreground="#3C4552"
                            VerticalAlignment="Top"
+                           HorizontalAlignment="Right"
+                           FontWeight="SemiBold"
+                           Margin="0 5 0 0"
                            />
 
                 <TextBlock Text="10"
@@ -70,12 +73,12 @@
                 <TextBlock Text="/month"
                            FontSize="20"
                            VerticalAlignment="Top"
-                           Margin="5 0 0 0"
+                           Margin="5 5 0 0"
                            FontWeight="SemiBold"
                            />
             </StackPanel>
 
-            <Grid Grid.Row="1" Grid.Column="0">
+            <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -85,6 +88,7 @@
                            Text="12 of 20 user"
                            Foreground="#595F6B"
                            VerticalAlignment="Bottom"
+                           FontWeight="SemiBold"
                            />
                 
                 <!-- progress bar-->
@@ -96,7 +100,9 @@
                     Background="#0064FE"
                     BorderBrush="#0064FE"
                     Foreground="#BBDDFA"
-                    Margin="0 20"
+                    Width="150" Height="35"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
                     />
 
         </Grid>

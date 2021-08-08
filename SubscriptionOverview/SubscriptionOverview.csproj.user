@@ -22,10 +22,43 @@
     <Compile Update="Control\PaymentCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AnalyticsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\CompanyBenefitsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MenuView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\OnboardingView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\SubscriptionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\BillingAddressView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\InvoicesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\OverviewView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\PaymentDetailsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\PlansView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Subscription\UserOverviewView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\SurveysView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TimeTrackingView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -54,10 +87,43 @@
     <Page Update="Resources\RadioButtonResourceDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AnalyticsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\CompanyBenefitsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\MenuView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\OnboardingView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\SubscriptionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\BillingAddressView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\InvoicesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\OverviewView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\PaymentDetailsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\PlansView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Subscription\UserOverviewView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\SurveysView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TimeTrackingView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using SubscriptionOverview.Control.Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,19 +29,47 @@ namespace SubscriptionOverview.Control
 
         public SolidColorBrush BannerBackground { get; set; }
         public SolidColorBrush BannerBorderBrush { get; set; }
-        public List<BannerBoxModel> ContentList { get; set; }
-        
-        public new BannerBoxModel Content
+
+        public ObservableCollection<Model.BannerBox> ContentCollection
         {
-            get { return (BannerBoxModel)GetValue(ContentProperty); }
+            get { return (ObservableCollection<Model.BannerBox>)GetValue(ContentCollectionProperty); }
+            set 
+            {
+                SetValue(ContentCollectionProperty, value);
+                if (value.Count > 0)
+                {
+                    Content = value[0];
+                }
+            }
+        }
+
+        public static readonly DependencyProperty ContentCollectionProperty =
+            DependencyProperty.Register("ContentCollection",
+                typeof(ObservableCollection<Model.BannerBox>),
+                typeof(BannerBox),
+                new PropertyMetadata());
+
+        //private List<BannerBoxModel> contentCollection;
+
+        //public List<BannerBoxModel> ContentCollection
+        //{
+        //    get { return contentCollection; }
+        //    set 
+        //    {
+        //        contentCollection = value; 
+        //    }
+        //}
+
+        public new Model.BannerBox Content
+        {
+            get { return (Model.BannerBox)GetValue(ContentProperty); }
             set { SetValue(ContentProperty, value); }
         }
 
         public static new readonly DependencyProperty ContentProperty =
             DependencyProperty.Register("Content",
-                typeof(BannerBoxModel),
+                typeof(Model.BannerBox),
                 typeof(BannerBox),
                 new PropertyMetadata());
-
     }
 }

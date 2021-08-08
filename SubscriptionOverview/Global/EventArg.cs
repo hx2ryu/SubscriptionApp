@@ -15,4 +15,14 @@ namespace SubscriptionOverview.Global
 
         public WindowStateTag ActionToBeRequest { get; }
     }
+
+    public class PageChangeRequestedEventArgs : EventArgs
+    {
+        public PageChangeRequestedEventArgs(PageType pageToBeChanged)
+        {
+            PageToBeChanged = pageToBeChanged;
+        }
+
+        public PageType PageToBeChanged { get; }
+    }
 }

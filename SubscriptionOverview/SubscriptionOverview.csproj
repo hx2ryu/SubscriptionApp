@@ -20,9 +20,7 @@
     <None Remove="Assets\Font\Roboto-Regular.ttf" />
     <None Remove="Assets\Font\Roboto-Thin.ttf" />
     <None Remove="Assets\Font\Roboto-ThinItalic.ttf" />
-    <None Remove="Assets\Icon\app_store_icon.png" />
-    <None Remove="Assets\Icon\instagram_icon.png" />
-    <None Remove="Assets\Icon\photo_icon.png" />
+    <None Remove="Assets\Image\profile.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,7 +29,6 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,13 +71,16 @@
     <Content Include="Assets\Font\Roboto-ThinItalic.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Icon\app_store_icon.png">
+    <Content Include="Assets\Image\app_store_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Icon\instagram_icon.png">
+    <Content Include="Assets\Image\instagram_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Icon\photo_icon.png">
+    <Content Include="Assets\Image\photo_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Image\profile.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

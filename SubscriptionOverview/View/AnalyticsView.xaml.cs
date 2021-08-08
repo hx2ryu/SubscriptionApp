@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SubscriptionOverview.View
 {
     /// <summary>
-    /// Interaction logic for SubscriptionView.xaml
+    /// Interaction logic for AnalyticsView.xaml
     /// </summary>
-    public partial class SubscriptionView : UserControl, IPageView
+    public partial class AnalyticsView : UserControl, IPageView
     {
-        public SubscriptionView()
+        public AnalyticsView()
         {
             InitializeComponent();
         }

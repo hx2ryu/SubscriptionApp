@@ -1,18 +1,9 @@
 ﻿using SubscriptionOverview.Global;
+using SubscriptionOverview.View;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace SubscriptionOverview
 {
@@ -21,14 +12,36 @@ namespace SubscriptionOverview
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly List<IPageView> pageCollection;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            pageCollection = new()
+            {
+                new AnalyticsView() { Tag = PageType.Analytics, Visibility = Visibility.Hidden, },
+                new CompanyBenefitsView() { Tag = PageType.CompanyBenefits, Visibility = Visibility.Hidden },
+                new SurveysView() { Tag = PageType.Surveys, Visibility = Visibility.Hidden },
+                new TimeTrackingView() { Tag = PageType.TimeTracking, Visibility = Visibility.Hidden },
+                new OnboardingView() { Tag = PageType.Onboarding, Visibility = Visibility.Hidden },
+                new SubscriptionView() { Tag = PageType.Subscription, Visibility = Visibility.Visible },
+            };
+
+            AddPagesIntoContainer();
+        }
+
+        private void AddPagesIntoContainer()
+        {
+            foreach (UIElement item in pageCollection)
+            {
+                PageContainer.Children.Add(item);
+            }
         }
 
         private void OnMoveWindow(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            DragMove();
         }
 
         private void OnReceiveWindowStateToBeChanged(object sender, EventArgs e)
@@ -51,6 +64,27 @@ namespace SubscriptionOverview
                  
                     default:
                         break;
+                }
+            }
+        }
+
+        private void OnReceivePageToBeChanged(object sender, EventArgs e)
+        {
+            if (e is PageChangeRequestedEventArgs args)
+            {
+                foreach (IPageView candidateView in pageCollection)
+                {
+                    if (candidateView.Tag is PageType tag)
+                    {
+                        if (tag == args.PageToBeChanged)
+                        {
+                            candidateView.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            candidateView.Visibility = Visibility.Hidden;
+                        }
+                    }
                 }
             }
         }
