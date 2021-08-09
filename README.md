@@ -1,8 +1,8 @@
 # Subscription Demo Application
 
-The Subscription Demo application is written in C# with WPF, .Net5.
+This project is written with reference great design sample from [Dribbble](https://dribbble.com/shots/14428654-Subscription-and-Plan-Overview).
 
-This project is written for just my portfolio as I refer to one of the greatest designer's portfolio from Dribbble.
+
 
 <img src="./NA/app_capture.png" /> 
 
@@ -14,6 +14,7 @@ This project is written for just my portfolio as I refer to one of the greatest 
 
 - [Visual Studio](https://visualstudio.microsoft.com/)
 - [WPF](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/getting-started/?view=netframeworkdesktop-4.8&viewFallbackFrom=netdesktop-5.0)
+- [.Net5](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 **Run the app**
 

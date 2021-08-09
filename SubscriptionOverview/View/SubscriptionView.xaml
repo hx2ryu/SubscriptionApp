@@ -80,14 +80,14 @@
 
             <ScrollViewer Grid.Row="2" Margin="30 0" VerticalScrollBarVisibility="Hidden">
                 <StackPanel Orientation="Vertical">
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
-                    <ctrl:InvoiceCard />
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

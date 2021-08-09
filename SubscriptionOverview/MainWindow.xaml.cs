@@ -76,14 +76,7 @@ namespace SubscriptionOverview
                 {
                     if (candidateView.Tag is PageType tag)
                     {
-                        if (tag == args.PageToBeChanged)
-                        {
-                            candidateView.Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            candidateView.Visibility = Visibility.Hidden;
-                        }
+                        candidateView.Visibility = (tag == args.PageToBeChanged) ? Visibility.Visible : Visibility.Hidden;
                     }
                 }
             }

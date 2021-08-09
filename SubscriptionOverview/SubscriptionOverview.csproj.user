@@ -13,7 +13,7 @@
     <Compile Update="Control\BusinessPlanCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Control\InvoiceCard.xaml.cs">
+    <Compile Update="Control\HorizontalBarCard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Control\NavigatorButton.xaml.cs">
@@ -69,7 +69,7 @@
     <Page Update="Control\BusinessPlanCard.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Control\InvoiceCard.xaml">
+    <Page Update="Control\HorizontalBarCard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Control\NavigatorButton.xaml">
