@@ -87,6 +87,9 @@
     <Page Update="Resources\RadioButtonResourceDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Resources\TabControlResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AnalyticsView.xaml">
       <SubType>Designer</SubType>
     </Page>

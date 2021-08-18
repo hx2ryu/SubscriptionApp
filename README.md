@@ -28,7 +28,7 @@ This project is written with reference great design sample from [Dribbble](https
 
 - Implement dynamically changing banner resources.
 - Add interface which enable to download pdf file into InvoiceCard.
-- Improve SubMenus's effect on Subscription page.
+- ~~Improve SubMenus's effect on Subscription page.~~
 - Implement progress bar on BusinessCard.
 - Improve button event animation.
 

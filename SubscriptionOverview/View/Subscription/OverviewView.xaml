@@ -3,15 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ctrl="clr-namespace:SubscriptionOverview.Control"
              xmlns:local="clr-namespace:SubscriptionOverview.View.Subscription"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock FontFamily="Roboto"
+    
+    <Grid Background="#FDFDFD">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0 30 30 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ctrl:BusinessPlanCard Grid.Column="0" />
+            <ctrl:PaymentCard Grid.Column="1" Margin="10 0 0 0"/>
+        </Grid>
+
+        <TextBlock Grid.Row="1"
+                   Text="INVOICES (12)"
+                   VerticalAlignment="Bottom"
+                   Margin="0 0 0 5"
+                   FontSize="13"
                    FontWeight="Bold"
-                   Foreground="{StaticResource Foregrouhnd}"
-                   Text="OverviewView Page"
-                   FontSize="30"
                    />
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Orientation="Vertical">
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+                <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

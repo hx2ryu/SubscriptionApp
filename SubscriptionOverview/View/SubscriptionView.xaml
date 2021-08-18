@@ -2,18 +2,26 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:view="clr-namespace:SubscriptionOverview.View.Subscription"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:ctrl="clr-namespace:SubscriptionOverview.Control"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
 
     <UserControl.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Roboto"/>
-            <Setter Property="Foreground" Value="{StaticResource Foregrouhnd}"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/TabControlResourceDictionary.xaml"/>
+                <ResourceDictionary>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Roboto"/>
+                        <Setter Property="Foreground" Value="{StaticResource Foregrouhnd}"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </UserControl.Resources>
     
     <Grid>
@@ -22,74 +30,40 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!--#region Border -->
+        <TextBlock Grid.Row="0"
+                   Foreground="Black"
+                   FontSize="18"
+                   Text="Subscription"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   Margin="30 0 0 0"
+                   />
+
+        <!--#region Border-->
         <Grid Grid.RowSpan="2" Background="{StaticResource BorderColor}" Width="2" HorizontalAlignment="Left" Panel.ZIndex="1"/>
         <Grid Grid.Row="0" Background="{StaticResource BorderColor}" Height="2" VerticalAlignment="Bottom" Panel.ZIndex="1"/>
         <!--#endregion-->
-        
-        <Grid Grid.Row="0" Background="#FFFFFF">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1.5*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0"
-                       Foreground="Black"
-                       FontSize="18"
-                       Text="Subscription"
-                       VerticalAlignment="Bottom"
-                       FontWeight="Bold"
-                       Margin="30 0 0 0"
-                       />
-
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="30 0">
-                <TextBlock Text="Overview" />
-                <TextBlock Text="Plans" Margin="30 0 0 0"/>
-                <TextBlock Text="User Overview" Margin="30 0 0 0"/>
-                <TextBlock Text="Invoices" Margin="30 0 0 0"/>
-                <TextBlock Text="Payment details" Margin="30 0 0 0"/>
-                <TextBlock Text="Billing address" Margin="30 0 0 0"/>
-            </StackPanel>
-        </Grid>
-
-        <Grid Grid.Row="1" Background="#FDFDFD">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="2*"/>
-            </Grid.RowDefinitions>
-
-
-            <Grid Grid.Row="0" Margin="30 30 30 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.3*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                
-                <ctrl:BusinessPlanCard Grid.Column="0" />
-                <ctrl:PaymentCard Grid.Column="1" Margin="10 0 0 0"/>
-            </Grid>
-
-            <TextBlock Grid.Row="1"
-                       Text="INVOICES (12)"
-                       VerticalAlignment="Bottom"
-                       Margin="30 0 0 5"
-                       FontSize="13"
-                       FontWeight="Bold"
-                       />
-
-            <ScrollViewer Grid.Row="2" Margin="30 0" VerticalScrollBarVisibility="Hidden">
-                <StackPanel Orientation="Vertical">
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                    <ctrl:HorizontalBarCard Content1="Invoice_2020/10.pdf" Title2="Date of invoice"/>
-                </StackPanel>
-            </ScrollViewer>
-        </Grid>
+        <TabControl Grid.Row="0" Grid.RowSpan="2" Margin="30 79.5 0 0" VerticalAlignment="Stretch" Panel.ZIndex="2">
+            <TabItem Header="Overview">
+                <view:OverviewView Background="Blue"/>
+            </TabItem>
+            
+            <TabItem Header="Plans">
+                <view:PlansView />
+            </TabItem>
+            <TabItem Header="User Overview">
+                <view:UserOverviewView />
+            </TabItem>
+            <TabItem Header="Invoices">
+                <view:InvoicesView />
+            </TabItem>
+            <TabItem Header="Payment details">
+                <view:PaymentDetailsView />
+            </TabItem>
+            <TabItem Header="Billing address">
+                <view:BillingAddressView />
+            </TabItem>
+        </TabControl>
     </Grid>
 </UserControl>
